@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kapsejlads</title>
+
+</head>
+<body>
+<h2>Opret Kapsejlads</h2>
+
+<form id="opretKapsejlads" onsubmit="opretKapsejlads()">
+    <label for="kapsejlads">Kapsejlads Navn:</label>
+    <input type="text" id="kapsejlads" name="kapsejlads" placeholder="Skriv navnet på kapejlads">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<br> <br>
+<h2>Alle Kapsejlads</h2>
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Navn</th>
+
+        </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+    <br> <br>
+    <div>
+        <h2>Fjern Kapsejlads</h2>
+        <input type="number" id="text-field" placeholder="Vælg KapsejladsId">
+        <button class="delete-button" onclick="deleteKapsejlads()" >Delete</button>
+    </div>
+
+</div>
+<br> <br>
+
+
+<h1>Tryk her for dropdown!</h1>
+<button id="pbFillDropDown">Fyld</button>
+
+<table>
+    <tr>
+        <td>
+            <label>Kapsejlads:</label>
+            <select id="ddKapsejlads"></select>
+        </td>
+
+        <td>
+            <label>Både:</label>
+            <select id="bådeDropdown">
+
+            </select>
+        </td>
+
+        <td>
+            <label for="number">Point:</label>
+            <input type="number" id="number" name="number">
+        </td>
+    </tr>
+</table>
+
+
+<script src="../js/dropdown.js"></script>
+<script src="../js/createtable.js"></script>
+<script src="../js/Kapsejlads.js"></script>
+<script src="../js/Båd.js"></script>
+</body>
+</html>

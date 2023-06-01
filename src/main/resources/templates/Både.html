@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Både</title>
+</head>
+<body>
+<h2>Opret Båd</h2>
+
+<form id="bådoprettelse" onsubmit="opretBåd()">
+    <label for="bådstørrelse">Vælg størrelse båd:</label><br>
+    <select id="bådstørrelse" name="bådstørrelse">
+        <option value="LILLE">LILLE</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="STOR">STOR</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+ <br> <br>
+
+<br>
+
+<h2>Alle Både</h2>
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Størrelse</th>
+
+        </tr>
+        </thead>
+        <tbody id="table_body">
+
+        </tbody>
+    </table>
+    <br> <br>
+    <div>
+        <h2>Fjern Båd</h2>
+        <input type="number" id="text-field" placeholder="Vælg BådId">
+        <button class="delete-button" onclick="deleteBoat()" >Delete</button>
+    </div>
+
+</div>
+<br> <br>
+
+<h1>Edit Boat</h1>
+
+<form id="editBoatForm">
+    <label for="bådId">Båd ID:</label>
+    <input type="number" id="bådId" name="name" required placeholder="Skriv Båd ID"><br><br>
+
+    <label for="bådstørrelse">Vælg størrelse båd:</label>
+    <select id="bådstørrelse2" name="bådstørrelse">
+        <option value="LILLE">LILLE</option>
+        <option value="MEDIUM">MEDIUM</option>
+        <option value="STOR">STOR</option>
+    </select>
+<br>
+    <button type="submit">Update Boat</button>
+</form>
+
+<script src="../js/createtable.js"></script>
+<script src="../js/fetchany.js"></script>
+<script src="../js/Båd.js"></script>
+</body>
+</html>
