@@ -43,7 +43,6 @@ function deleteBoat() {
     }
 }
 
-
 //KAPSEJLADS
 
 fetch("http://localhost:8080/alleKapsejlads").then((data) => {return data.json();
@@ -86,23 +85,3 @@ function deleteKapsejlads() {
         // You can display an error message or perform other actions for missing ID.
     }
 }
-
-
-fetch("http://localhost:8080/alleDeltagelser")
-    .then((data) => data.json())
-    .then((objectData) => {
-        console.log(objectData);
-        // Sort objectData based on the point property in descending order
-        objectData.sort((a, b) => a.point - b.point);
-
-        let tableData = "";
-        objectData.forEach((values) => {
-            tableData += `<tr>
-            <td>${values.deltagerId}</td>
-            <td>${values.båd.bådId}</td>
-            <td>${values.kapsejlads.kapsejladsId}</td>
-            <td>${values.point}</td>
-        </tr>`;
-        });
-        document.getElementById("t-body").innerHTML = tableData;
-    });

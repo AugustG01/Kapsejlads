@@ -5,6 +5,7 @@
     <title>Deltagelse</title>
   <link rel="stylesheet" href="../static/styles.css">
 
+
 </head>
 <body>
 <div class="navbar">
@@ -40,6 +41,8 @@
 <button onclick="sendTableData()"  type="submit">Submit</button>
 <br><br>
 
+
+<h2>Oversigt over deltagelse</h2>
 <div class="container">
   <table class="table">
     <thead class="table-dark">
@@ -57,6 +60,34 @@
 </div>
 
 
+<div>
+  <h2>Fjern Deltagelse</h2>
+  <input type="number" id="deleteDeltagelse" placeholder="Vælg deltagelse ID">
+  <button class="delete-button" onclick="deleteDeltagelse()" >Slet</button>
+</div>
+
+
+<h2>Rediger Deltagelse</h2>
+
+<form id="editDeltagelseForm">
+  <label for="deltagelseId">Deltagelse ID:</label>
+  <input type="number" id="deltagelseId" name="name" required placeholder="Skriv deltagelse ID"><br>
+
+  <label for="point">Point:</label>
+  <input type="text" id="point" name="point" placeholder="Point">
+  <br>
+  <label for="bådId2">Båd ID:</label>
+  <input type="text" id="bådId2" name="bådId2" placeholder="Båd ID">
+  <br>
+  <label for="navn">Kapsejlads:</label>
+  <input type="text" id="navn" name="navn" placeholder="Navn på kapsejlads">
+  <br>
+  <br>
+  <button  type="submit">Opdater Deltagelse</button>
+</form>
+
+
+<script src="../js/deltagelse.js"></script>
 <script src="../js/Kapsejlads.js"></script>
 <script src="../js/fetchany.js"></script>
 <script src="../js/dropdown.js"></script>
