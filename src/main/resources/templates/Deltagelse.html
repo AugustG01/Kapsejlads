@@ -14,18 +14,18 @@
 </div>
 
 
-<h1>Tryk her for at fylde dropdown!</h1>
-<button id="pbFillDropDown">Fyld</button>
+<h2>Tryk her for at lave en deltagelse!</h2>
+<button id="pbFillDropDown">Fyld Dropdown</button>
 
 <table id="deltagelse">
   <tr>
     <td>
-      <label for="kapsejladsId">Kapsejlads:</label>
+      <label for="kapsejladsId">Kapsejlads ID:</label>
       <select id="kapsejladsId"></select>
     </td>
 
     <td>
-      <label for="bådId">Både:</label>
+      <label for="bådId">Båd ID:</label>
       <select id="bådId">
 
       </select>
@@ -38,7 +38,23 @@
   </tr>
 </table>
 <button onclick="sendTableData()"  type="submit">Submit</button>
+<br><br>
 
+<div class="container">
+  <table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">Deltager ID</th>
+      <th scope="col">Båd</th>
+      <th scope="col">Kapsejlads</th>
+      <th scope="col">Point</th>
+    </tr>
+    </thead>
+    <tbody id="t-body">
+
+    </tbody>
+  </table>
+</div>
 
 
 <script src="../js/Kapsejlads.js"></script>
