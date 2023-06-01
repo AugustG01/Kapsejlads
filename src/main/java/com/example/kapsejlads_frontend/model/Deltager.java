@@ -12,12 +12,13 @@ public class Deltager {
     private int deltagerId;
 
     @ManyToOne
-    @JoinColumn(name = "bådid", referencedColumnName = "bådId")
+    @JoinColumn(name = "bådId", referencedColumnName = "bådId")
     private Båd båd;
 
     @ManyToOne
     @JoinColumn(name = "kapsejlId", referencedColumnName = "kapsejladsId")
     private Kapsejlads kapsejlads;
+
     private int point;
 
 }

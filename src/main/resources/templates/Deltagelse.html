@@ -17,27 +17,27 @@
 <h1>Tryk her for at fylde dropdown!</h1>
 <button id="pbFillDropDown">Fyld</button>
 
-<table>
+<table id="deltagelse">
   <tr>
     <td>
-      <label>Kapsejlads:</label>
-      <select id="ddKapsejlads"></select>
+      <label for="kapsejladsId">Kapsejlads:</label>
+      <select id="kapsejladsId"></select>
     </td>
 
     <td>
-      <label>Både:</label>
-      <select id="ddBåde">
+      <label for="bådId">Både:</label>
+      <select id="bådId">
 
       </select>
     </td>
 
     <td>
-      <label for="number">Point:</label>
-      <input type="number" id="number" name="number">
+      <label for="ddPoint">Point:</label>
+      <input type="number" id="ddPoint" name="number">
     </td>
   </tr>
 </table>
-<button  type="submit">Submit</button>
+<button onclick="sendTableData()"  type="submit">Submit</button>
 
 
 

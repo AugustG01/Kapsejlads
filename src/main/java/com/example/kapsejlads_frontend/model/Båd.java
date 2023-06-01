@@ -13,6 +13,7 @@ public class Båd {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bådId")
     private int bådId;
 
     @Enumerated(EnumType.STRING)

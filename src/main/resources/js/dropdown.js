@@ -2,9 +2,11 @@ console.log("jeg er i dropdown")
 const urlKapsejlads = "http://localhost:8080/alleKapsejlads"
 const urlBåde = "http://localhost:8080/allBoats"
 
+
 const pbFillDropDown = document.getElementById("pbFillDropDown")
-const ddKapsejlads = document.getElementById("ddKapsejlads")
-const ddBåde = document.getElementById("ddBåde")
+const ddKapsejlads = document.getElementById("kapsejladsId")
+const ddBåde = document.getElementById("bådId")
+const point = document.getElementById("ddPoint")
 
 function fetchKapsejlads(url){
     return fetch(url).then((response) => response.json())
@@ -42,7 +44,7 @@ async function showAlleKapsejlads(){
 function addKapsejladsToDropDown(item){
     console.log(item)
     const el = document.createElement("option")
-    el.textContent = item.navn;
+    el.textContent = item.kapsejladsId;
     ddKapsejlads.append(el)
 }
 
@@ -65,6 +67,67 @@ pbFillDropDown.addEventListener("click", actionShowKapsejlads)
 pbFillDropDown.addEventListener("click", actionShowBåde)
 ddKapsejlads.addEventListener("change", select)
 
+//sender informationen fra dropdown tabellen
+
+
+function postDeltager(url, data){
+    return fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data
+    });
+
+}
+function sendTableData() {
+
+    const data = {
+        bådId: ddBåde.value,
+        kapsejladsId: ddKapsejlads.value
+    };
+
+    let deltager = {point: point.value}
+    alert(deltager.point)
+
+    postDeltager("http://localhost:8080/createDeltagelser"+"/"+data.kapsejladsId+"/"+data.bådId, JSON.stringify(deltager))
+}
 
 
 
+
+function sendData(kapsejladsId, bådId, point) {
+    const url = "http://localhost:8080/createDeltagelser/" + kapsejladsId+"/"+bådId;
+
+    // Set up the fetch request
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error: ' + response.status);
+            }
+        })
+        .then(data => {
+            console.log(data); // Handle the response data
+        })
+        .catch(error => {
+            console.error(error); // Handle any errors
+        });
+}
+
+function postDeltager(url, data){
+    return fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data
+});
+
+}
