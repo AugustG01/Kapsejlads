@@ -14,58 +14,47 @@
     <a href="Deltagelse.html">Deltagelse</a>
 </div>
 
-<h2>Opret Kapsejlads</h2>
-
-<form id="opretKapsejlads" onsubmit="opretKapsejlads()">
-    <label for="kapsejlads">Kapsejlads Navn:</label>
-    <input type="text" id="kapsejlads" name="kapsejlads" placeholder="Navn på kapsejladset">
-    <br><br>
-    <input type="submit" value="Opret">
-</form>
-
-
-<br> <br>
-<h2>Alle Kapsejlads</h2>
 <div class="container">
-    <table class="table">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Navn</th>
+    <div class="left-column">
+        <h2>Opret Kapsejlads</h2>
+        <form id="opretKapsejlads" onsubmit="opretKapsejlads()">
+            <label for="kapsejlads">Kapsejlads Navn:</label>
+            <input type="text" id="kapsejlads" name="kapsejlads" placeholder="Navn på kapsejladset">
+            <br><br>
+            <input type="submit" value="Opret">
+        </form>
 
-        </tr>
-        </thead>
-        <tbody id="table-body">
+        <h2>Rediger kapsejlads</h2>
+        <form id="editKapsejladsForm">
+            <label for="kapsejladsId">Kapsejlads ID:</label>
+            <input type="number" id="kapsejladsId" name="name" required placeholder="Skriv Kapsejlads ID"><br><br>
 
-        </tbody>
-    </table>
-    <br> <br>
-    <div>
-        <h2>Fjern Kapsejlads</h2>
-        <input type="number" id="text-field" placeholder="Vælg KapsejladsId">
-        <button class="delete-button" onclick="deleteKapsejlads()" >Slet</button>
+            <label for="navn">Kapsejlads Navn:</label>
+            <input type="text" id="navn" name="navn" placeholder="Skriv navnet på kapejlads">
+            <br><br>
+            <button type="submit">Opdater Kapsejlads</button>
+        </form>
     </div>
 
+    <div class="right-column">
+        <h2>Alle Kapsejlads</h2>
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Navn</th>
+            </tr>
+            </thead>
+            <tbody id="table-body">
+            <!-- Table body content -->
+            </tbody>
+        </table>
+
+        <h2>Fjern Kapsejlads</h2>
+        <input type="number" id="text-field" placeholder="Vælg KapsejladsId">
+        <button class="delete-button" onclick="deleteKapsejlads()">Slet</button>
+    </div>
 </div>
-<br> <br>
-
-<h2>Rediger kapsejlads</h2>
-
-<form id="editKapsejladsForm">
-    <label for="kapsejladsId">Kapsejlads ID:</label>
-    <input type="number" id="kapsejladsId" name="name" required placeholder="Skriv Kapsejlads ID"><br><br>
-
-    <label for="navn">Kapsejlads Navn:</label>
-    <input type="text" id="navn" name="navn" placeholder="Skriv navnet på kapejlads">
-
-    <br>
-    <br>
-    <button  type="submit">Opdater Kapsejlads </button>
-</form>
-
-<br> <br>
-
-
 
 
 <script src="../js/dropdown.js"></script>

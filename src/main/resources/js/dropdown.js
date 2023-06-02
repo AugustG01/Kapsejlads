@@ -88,7 +88,7 @@ function sendTableData() {
     };
 
     let deltager = {point: point.value}
-    alert(deltager.point)
+    location.reload()
 
     postDeltager("http://localhost:8080/createDeltagelser"+"/"+data.kapsejladsId+"/"+data.bådId, JSON.stringify(deltager))
 }
