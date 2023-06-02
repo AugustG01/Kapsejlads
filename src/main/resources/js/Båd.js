@@ -41,21 +41,21 @@ const tableProduct = document.getElementById('båd-list')
 
 
 function submitForm(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // Gør formen ikke sendes ved en fejl
 
 
 
-    // Get form data
+    // Henter form data
     var bådId = document.getElementById('bådId').value;
     var bådStørrelse = document.getElementById('bådstørrelse2').value;
 
-    // Prepare the data object
+    // Forbereder data til object
     var data = {
         bådId: bådId,
         bådStørrelse: bådStørrelse
     };
 
-    // Send the PUT request to update the boat
+    // Send the PUT request to update the boat Sender en PUT request til boats
     fetch(`http://localhost:8080/boats/${bådId}`, {
         method: 'PUT',
         headers: {
@@ -65,15 +65,14 @@ function submitForm(event) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Boat updated successfully:', data);
-            // You can add any further logic or UI updates here
+            console.log('Båd opdateret:', data);
+            // Reloader wedsiden
             location.reload()
         })
         .catch(error => {
-            console.error('Error updating boat:', error);
-            // Handle the error gracefully
+            console.error('Fejl opdatering af båd:', error);
+
         });
 }
 
-// Add event listener to the form
 document.getElementById('editBoatForm').addEventListener('submit', submitForm);

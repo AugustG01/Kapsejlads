@@ -63,11 +63,10 @@ function fillDropDownBåde(bådeList){
     bådeList.forEach(addBådeToDropDown)
 }
 
+//sender informationen fra dropdown tabellen
 pbFillDropDown.addEventListener("click", actionShowKapsejlads)
 pbFillDropDown.addEventListener("click", actionShowBåde)
 ddKapsejlads.addEventListener("change", select)
-
-//sender informationen fra dropdown tabellen
 
 
 function postDeltager(url, data){
@@ -80,6 +79,7 @@ function postDeltager(url, data){
     });
 
 }
+//Her oprettes en deltager, som tager bådID, kapsejladsID og point som lægges i et deltager Object
 function sendTableData() {
 
     const data = {

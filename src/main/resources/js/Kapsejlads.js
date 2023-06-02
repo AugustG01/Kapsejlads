@@ -8,11 +8,11 @@ function opretKapsejlads() {
 
     const selectElement = document.getElementById("kapsejlads");
     const selectedValue = selectElement.value;
-    alert("hej")
+
     const kapsejlads = {
         navn: selectedValue
     };
-    alert(kapsejlads.navn);
+
 
     postBåd(urlPostKapsejlads, JSON.stringify(kapsejlads));
 }
@@ -20,19 +20,19 @@ function opretKapsejlads() {
 
 
 function submitForm(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
-    // Get form data
+    // Henter data fra formen
     var kapsejladsId = document.getElementById('kapsejladsId').value;
     var navn = document.getElementById('navn').value;
 
-    // Prepare the data object
+    // Forbereder data objectet
     var data = {
         kapsejladsId: kapsejladsId,
         navn: navn
     };
 
-    // Send the PUT request to update the boat
+    // Sender en PUT request til kapsejlads
     fetch(`http://localhost:8080/kapsejlads/${kapsejladsId}`, {
         method: 'PUT',
         headers: {
@@ -42,12 +42,12 @@ function submitForm(event) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Boat updated successfully:', data);
-            // You can add any further logic or UI updates here
+            console.log('Kapsejlads opdateret:', data);
+            // Her reloades siden når den er succesfuld
             location.reload()
         })
         .catch(error => {
-            console.error('Error updating boat:', error);
+            console.error('Fejl:', error);
             // Handle the error gracefully
         });
 }
